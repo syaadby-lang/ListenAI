@@ -20,19 +20,19 @@ async function loadCards() {
         <span class="icon">${escapeHtml(c.icon)}</span>
         <b>${escapeHtml(c.title)}</b>
         <span class="muted">${escapeHtml(c.description)}</span>
-        <small>${c.total} soal · ${escapeHtml(c.level)}</small>
+        <small>${c.total} ${c.total === 1 ? "question" : "questions"} · ${escapeHtml(c.level)}</small>
       </button>`).join("");
     document.querySelectorAll("#cards [data-id]").forEach(btn =>
       btn.addEventListener("click", () => loadLesson(btn.dataset.level, btn.dataset.id)));
   } catch (e) {
-    $("cards").textContent = "Gagal memuat daftar materi.";
+    $("cards").textContent = "Failed to load the lesson list.";
   }
 }
 
 async function loadLesson(level, lessonId) {
   stopAudio();
   const res = await fetch(`/api/lesson/${encodeURIComponent(level)}/${encodeURIComponent(lessonId)}`);
-  if (!res.ok) { alert("Materi tidak ditemukan."); return; }
+  if (!res.ok) { alert("Lesson not found."); return; }
   currentLesson = await res.json();
   currentLevel = level;
 
@@ -40,14 +40,12 @@ async function loadLesson(level, lessonId) {
   $("lesson-title").textContent = currentLesson.title;
   $("lesson-topic").textContent = currentLesson.topic || "";
   $("lesson-instruction").textContent = currentLesson.instruction || "";
-  $("quiz-count").textContent = `${currentLesson.questions.length} soal`;
+  $("quiz-count").textContent = `${currentLesson.questions.length} ${currentLesson.questions.length === 1 ? "question" : "questions"}`;
 
   $("script").textContent = currentLesson.script || "";
   document.querySelector(".transcript").classList.toggle("hidden", !currentLesson.script);
 
   $("speed").value = String(currentLesson.speed || 1);
-  audio.src = currentLesson.audio;
-  audio.playbackRate = Number($("speed").value);
 
   $("quiz").innerHTML = currentLesson.questions.map((q, i) => {
     const input = q.type === "short"
@@ -75,8 +73,8 @@ $("play").addEventListener("click", () => {
   audio.load();
   audio.playbackRate = Number($("speed").value);
   audio.play().catch(e => {
-    console.error("Audio error:", e, audio.error);
-    alert(`Audio gagal diputar: ${e.name}${audio.error ? " (kode " + audio.error.code + ")" : ""}`);
+    console.error("Audio error:", e, audio.error, audio.src);
+    alert(`Audio failed to play: ${e.name}${audio.error ? " (kode " + audio.error.code + ")" : ""}`);
   });
 });
 
@@ -110,8 +108,8 @@ $("submit").addEventListener("click", async () => {
       const ok = String(answers[i]).trim().toLowerCase() === String(data.answer_key[i]).trim().toLowerCase();
       return `<div class="review ${ok ? "correct" : "wrong"}">
         <b>${i + 1}. ${ok ? "✓" : "✗"} ${escapeHtml(q.prompt)}</b><br>
-        ${ok ? "" : `Jawaban Anda: ${escapeHtml(answers[i])}<br>`}
-        Jawaban benar: ${escapeHtml(data.answer_key[i])}<br>
+        ${ok ? "" : `Your answer: ${escapeHtml(answers[i])}<br>`}
+        Correct answer: ${escapeHtml(data.answer_key[i])}<br>
         <span class="muted">${escapeHtml(q.explanation || "")}</span>
       </div>`;
     }).join("");
@@ -121,7 +119,6 @@ $("submit").addEventListener("click", async () => {
       <div class="score">${data.score}%</div>
       <h3>${data.correct} of ${data.total} correct</h3>
       <p>${escapeHtml(fbText)}</p>
-      <p><b>Recommended next level: ${escapeHtml(data.recommended_level)}</b></p>
       ${review}`;
     $("result").classList.remove("hidden");
     $("result").scrollIntoView({behavior: "smooth", block: "nearest"});
