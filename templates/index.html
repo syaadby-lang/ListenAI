@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="id">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,8 +21,8 @@
   <section id="lessons">
     <div class="section-head">
       <div>
-        <p class="eyebrow">DAFTAR MATERI</p>
-        <h2>Pilih materi listening</h2>
+        <p class="eyebrow">LESSON LIST</p>
+        <h2>Choose a listening lesson</h2>
       </div>
     </div>
     <div id="cards" class="lesson-cards"></div>
@@ -36,19 +36,19 @@
         <h2 id="lesson-title">Lesson title</h2>
         <p id="lesson-topic" class="muted"></p>
       </div>
-      <button id="change-level" class="text-button">← Daftar materi</button>
+      <button id="change-level" class="text-button" type="button">← Back to lessons</button>
     </div>
 
     <div class="audio-card">
       <div>
         <p class="eyebrow">LISTENING AUDIO</p>
         <h3>Listen carefully</h3>
-        <p class="muted">Dengarkan audio, lalu jawab pertanyaan di bawah.</p>
+        <p class="muted">Listen to the audio, then answer the questions below.</p>
       </div>
 
       <div class="audio-controls">
-        <button id="play" class="primary">▶ Play audio</button>
-        <button id="stop" class="secondary">■ Stop</button>
+        <button id="play" class="primary" type="button">▶ Play audio</button>
+        <button id="stop" class="secondary" type="button">■ Stop</button>
         <label>
           Speed
           <select id="speed">
@@ -78,7 +78,7 @@
 
     <form id="quiz"></form>
 
-    <button id="submit" class="primary submit">Submit answers</button>
+    <button id="submit" class="primary submit" type="button">Submit answers</button>
 
     <div id="result" class="result hidden"></div>
 
