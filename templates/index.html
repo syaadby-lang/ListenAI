@@ -1,0 +1,140 @@
+
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ListenAI | CEFR Listening Lab</title>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="brand">
+    <span class="brandmark">L</span>
+    <div>
+      <b>ListenAI</b>
+      <small>CEFR Listening Lab</small>
+    </div>
+  </div>
+  <span class="tag">AI-ASSISTED LEARNING</span>
+</header>
+
+<main class="wrap">
+
+  <section class="intro">
+    <p class="eyebrow">ENGLISH LISTENING PRACTICE</p>
+    <h1>Train your ears.<br>
+      <span>Build your confidence.</span>
+    </h1>
+    <p>Latihan listening bahasa Inggris dari Beginner hingga Advanced, mengikuti enam band CEFR.</p>
+  </section>
+
+  <section class="panel">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">LEARNING PATH</p>
+        <h2>Pilih level CEFR</h2>
+      </div>
+      <span class="muted">A1 — C2</span>
+    </div>
+
+    <div id="levels" class="levels">
+      {% for level in levels %}
+      <button class="level" data-level="{{level}}">
+        <b>{{level}}</b>
+        <span>
+          {{'Beginner' if level in ['A1','A2'] else ('Intermediate' if level in ['B1','B2'] else 'Advanced')}}
+        </span>
+      </button>
+      {% endfor %}
+    </div>
+  </section>
+
+  <section id="lesson" class="panel hidden">
+
+    <div class="section-head">
+      <div>
+        <p class="eyebrow" id="lesson-level">LEVEL A1</p>
+        <h2 id="lesson-title">Lesson title</h2>
+        <p id="lesson-topic" class="muted"></p>
+      </div>
+      <button id="change-level" class="text-button">Change level</button>
+    </div>
+
+    <div class="audio-card">
+      <div>
+        <p class="eyebrow">LISTENING AUDIO</p>
+        <h3>Listen carefully</h3>
+        <p class="muted">Audio dibuat langsung dari script menggunakan suara browser.</p>
+      </div>
+
+      <div class="audio-controls">
+        <button id="play" class="primary">▶ Play audio</button>
+        <button id="stop" class="secondary">■ Stop</button>
+
+        <label>
+          Speed
+          <select id="speed">
+            <option value="0.75">0.75×</option>
+            <option value="0.8">0.8×</option>
+            <option value="0.9">0.9×</option>
+            <option value="1" selected>1.0×</option>
+            <option value="1.1">1.1×</option>
+          </select>
+        </label>
+      </div>
+    </div>
+
+    <details class="transcript">
+      <summary>Show transcript (optional)</summary>
+      <p id="script"></p>
+    </details>
+
+    <div class="section-head quiz-head">
+      <div>
+        <p class="eyebrow">COMPREHENSION CHECK</p>
+        <h2>Answer the questions</h2>
+      </div>
+      <span class="muted">3 questions</span>
+    </div>
+
+    <form id="quiz"></form>
+
+    <button id="submit" class="primary submit">
+      Submit answers
+    </button>
+
+    <div id="result" class="result hidden"></div>
+
+  </section>
+
+  <section class="feature-grid">
+    <article>
+      <span>01</span>
+      <h3>Text-to-Speech</h3>
+      <p>Dengarkan materi dengan kecepatan yang dapat diatur.</p>
+    </article>
+
+    <article>
+      <span>02</span>
+      <h3>Adaptive difficulty</h3>
+      <p>Rekomendasi level berdasarkan hasil latihan.</p>
+    </article>
+
+    <article>
+      <span>03</span>
+      <h3>AI feedback</h3>
+      <p>Umpan balik otomatis untuk membantu latihan berikutnya.</p>
+    </article>
+  </section>
+
+  <footer>
+    ListenAI · Prototype for English Listening UTS · CEFR A1–C2
+  </footer>
+
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
