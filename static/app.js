@@ -76,8 +76,7 @@ $("play").addEventListener("click", () => {
   audio.playbackRate = Number($("speed").value);
   audio.play().catch(e => {
     console.error("Audio error:", e, audio.error, audio.src);
-    alert(`Audio failed to play: ${e.name}${audio.error ? " (kode " + audio.error.code + ")" : ""}`);
-  });
+    alert(`Audio failed to play: ${e.name}${audio.error ? " (code " + audio.error.code + ")" : ""}`);
 });
 
 $("stop").addEventListener("click", stopAudio);
