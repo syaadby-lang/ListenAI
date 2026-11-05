@@ -16,6 +16,11 @@
   <span class="level-pill">LEVEL B1</span>
 </header>
 
+<nav class="tabs">
+  <button id="tab-lessons" class="tab active" type="button">Lessons</button>
+  <button id="tab-progress" class="tab" type="button">My Progress</button>
+</nav>
+
 <main class="wrap">
 
   <section id="lessons">
@@ -82,6 +87,31 @@
 
     <div id="result" class="result hidden"></div>
 
+  </section>
+
+  <section id="progress" class="hidden">
+    <div class="section-head">
+      <div>
+        <p class="eyebrow">MY PROGRESS</p>
+        <h2>Overall progress</h2>
+      </div>
+      <button id="reset-progress" class="text-button" type="button">Reset progress</button>
+    </div>
+
+    <div class="progress-card">
+      <div id="ring" class="ring"><span id="ring-pct">0%</span></div>
+      <ul class="stat-list">
+        <li><b id="stat-units">0 / 0</b><span>Completed lessons</span></li>
+        <li><b id="stat-correct">0%</b><span>Correct answers</span></li>
+        <li><b id="stat-time">0m</b><span>Study time</span></li>
+      </ul>
+    </div>
+
+    <h3>Skill breakdown</h3>
+    <div id="skills" class="skills"></div>
+
+    <h3>Recent activity</h3>
+    <div id="recent" class="recent"></div>
   </section>
 
   <footer>
