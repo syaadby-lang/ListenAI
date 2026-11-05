@@ -1,27 +1,189 @@
-# Starter lesson bank. Scripts are original and questions are keyed for the prototype.
 LESSONS = {
-"A1": {"title":"Meeting a new friend","topic":"Greetings","speed":0.80,"script":"Hello! My name is Anna. I am twelve years old. I live in Jakarta. I like music and football. Nice to meet you!","questions":[
-{"type":"mcq","prompt":"What is the speaker's name?","options":["Anna","Mia","Sarah"],"answer":"Anna","explanation":"She says: My name is Anna."},
-{"type":"mcq","prompt":"How old is Anna?","options":["Ten","Twelve","Fourteen"],"answer":"Twelve","explanation":"She says she is twelve years old."},
-{"type":"gap","prompt":"Anna lives in _____.","options":["Jakarta","Bandung","Surabaya"],"answer":"Jakarta","explanation":"She says: I live in Jakarta."}]},
-"A2": {"title":"A busy school day","topic":"Daily routine","speed":0.90,"script":"On weekdays, Rina gets up at six thirty. She has breakfast with her family and walks to school. Her first class starts at seven thirty. After school, she usually does her homework before dinner.","questions":[
-{"type":"mcq","prompt":"What time does Rina get up?","options":["6:00","6:30","7:30"],"answer":"6:30","explanation":"She gets up at six thirty."},
-{"type":"mcq","prompt":"How does she go to school?","options":["By bus","By bicycle","On foot"],"answer":"On foot","explanation":"She walks to school."},
-{"type":"gap","prompt":"She does her homework before _____.","options":["breakfast","dinner","school"],"answer":"dinner","explanation":"The final sentence says before dinner."}]},
-"B1": {"title":"A student volunteering abroad","topic":"Interview","speed":1.0,"script":"Interviewer: Why did you decide to volunteer in Thailand? Student: I wanted to experience a different culture and improve my communication skills. At first, the language barrier was challenging. However, working with local teachers helped me become more confident. Interviewer: What did you learn? Student: I learned that listening carefully is just as important as speaking clearly.","questions":[
-{"type":"mcq","prompt":"What was the student's main reason for volunteering?","options":["To earn money","To experience another culture and improve communication","To avoid studying"],"answer":"To experience another culture and improve communication","explanation":"The student gives both reasons in the first answer."},
-{"type":"mcq","prompt":"What was difficult at first?","options":["The weather","The language barrier","The food"],"answer":"The language barrier","explanation":"The student explicitly mentions the language barrier."},
-{"type":"short","prompt":"According to the student, what is as important as speaking clearly?","options":[],"answer":"listening carefully","explanation":"The student says listening carefully is just as important."}]},
-"B2": {"title":"The future of remote work","topic":"Podcast discussion","speed":1.0,"script":"Host: Remote work is often described as the future of employment, but is it suitable for everyone? Research suggests that flexibility can improve job satisfaction. Yet some employees miss spontaneous conversations and the sense of belonging that an office can provide. Our guest argues that hybrid work may offer a practical compromise, provided that teams agree on clear expectations and communicate intentionally.","questions":[
-{"type":"mcq","prompt":"What is the central issue discussed?","options":["Whether remote work suits everyone","How to build an office","Why salaries are falling"],"answer":"Whether remote work suits everyone","explanation":"The discussion weighs benefits and drawbacks of remote work."},
-{"type":"mcq","prompt":"What drawback do some employees experience?","options":["Longer holidays","Less spontaneous interaction","More salary deductions"],"answer":"Less spontaneous interaction","explanation":"The speaker says employees miss spontaneous conversations."},
-{"type":"short","prompt":"What arrangement is presented as a possible compromise?","options":[],"answer":"hybrid work","explanation":"The guest argues that hybrid work may be a practical compromise."}]},
-"C1": {"title":"Urban green spaces and public health","topic":"Academic lecture","speed":1.0,"script":"Good afternoon. Today I want to examine the relationship between urban green spaces and public health. Parks are sometimes treated as decorative amenities, but that view overlooks their wider function. Access to vegetation can encourage physical activity, mitigate the urban heat-island effect, and provide places for social interaction. Nevertheless, the benefits are not distributed equally. In densely populated districts, residents may have fewer safe and accessible green spaces. Therefore, urban planning should consider not merely the total area of greenery, but also its distribution, quality, and accessibility.","questions":[
-{"type":"mcq","prompt":"What is the lecture's main argument?","options":["Parks are mainly decorative","Green spaces support health, but access and distribution matter","Cities should remove public parks"],"answer":"Green spaces support health, but access and distribution matter","explanation":"The lecturer discusses benefits and unequal access."},
-{"type":"mcq","prompt":"What does 'that view' refer to?","options":["Parks as decorative amenities","Urban planning","Physical activity"],"answer":"Parks as decorative amenities","explanation":"It refers to the preceding claim that parks are merely decorative."},
-{"type":"short","prompt":"Name one environmental benefit mentioned.","options":[],"answer":"mitigate the urban heat-island effect","explanation":"The lecture identifies mitigation of the urban heat-island effect."}]},
-"C2": {"title":"The ethics of algorithmic decision-making","topic":"Public debate","speed":1.0,"script":"When institutions delegate consequential decisions to algorithmic systems, efficiency can become an overly convenient justification. A model may reproduce patterns embedded in historical data while presenting its outputs as neutral. The issue, then, is not simply whether an algorithm is accurate on average, but whose errors are tolerated, who can challenge a decision, and whether responsibility remains traceable. Transparency alone is insufficient if affected individuals lack meaningful avenues for appeal. A defensible system requires contestability, independent scrutiny, and clearly assigned human accountability.","questions":[
-{"type":"mcq","prompt":"What is the speaker primarily questioning?","options":["Whether algorithms can process data quickly","Whether efficiency justifies delegating consequential decisions","Whether institutions should collect any data"],"answer":"Whether efficiency justifies delegating consequential decisions","explanation":"The speaker challenges efficiency as an overly convenient justification."},
-{"type":"mcq","prompt":"What does 'contestability' most nearly mean here?","options":["The ability to challenge a decision","The ability to speed up processing","The ability to hide data"],"answer":"The ability to challenge a decision","explanation":"The following sentence refers to meaningful avenues for appeal."},
-{"type":"short","prompt":"According to the speaker, what must remain clearly assigned?","options":[],"answer":"human accountability","explanation":"The final sentence calls for clearly assigned human accountability."}]}
+    "B1": [
+        {
+            "id": "gist",
+            "icon": "💬",
+            "title": "Listening for Gist",
+            "description": "Memahami ide utama dari sebuah percakapan.",
+            "topic": "Conversation",
+            "instruction": "Listen to the conversation carefully and answer the following questions!",
+            "speed": 1.0,
+            "audio": "/static/audio/audio-1.mp3",
+            "script": "",
+            "questions": [
+                {
+                    "type": "mcq",
+                    "prompt": "Why does Sharon ask Jeff to take care of Joey?",
+                    "options": [
+                        "She wants to go shopping.",
+                        "She has to check a computer problem at the office.",
+                        "She wants to visit her friend.",
+                        "She has to go to the hospital.",
+                    ],
+                    "answer": "She has to check a computer problem at the office.",
+                    "explanation": "Sharon asks Jeff to look after Joey because she has to check a computer problem at the office.",
+                },
+                {
+                    "type": "mcq",
+                    "prompt": "What does Jeff explain about Sharon?",
+                    "options": [
+                        "She is married and has two children.",
+                        "She lives with her parents.",
+                        "She is a single mother and sometimes helps Jeff.",
+                        "She works as a teacher.",
+                    ],
+                    "answer": "She is a single mother and sometimes helps Jeff.",
+                    "explanation": "Jeff explains that Sharon is a single mother and sometimes helps him.",
+                },
+            ],
+        },
+        {
+            "id": "specific",
+            "icon": "🔍",
+            "title": "Listening for Specific Information",
+            "description": "Menangkap detail tertentu dari sebuah percakapan.",
+            "topic": "Careers",
+            "instruction": "Listen to the audio and choose the correct answer!",
+            "speed": 1.0,
+            "audio": "/static/audio/audio-2.mp3",
+            "script": "",
+            "questions": [
+                {
+                    "type": "mcq",
+                    "prompt": "What does James hope to get at his current company?",
+                    "options": [
+                        "A new job in another company.",
+                        "A promotion with more responsibility.",
+                        "A part-time job.",
+                        "A chance to work from home.",
+                    ],
+                    "answer": "A promotion with more responsibility.",
+                    "explanation": "James hopes to get a promotion with more responsibility at his current company.",
+                },
+                {
+                    "type": "mcq",
+                    "prompt": "Why did Linda decide to become a freelance graphic designer?",
+                    "options": [
+                        "She was fired from her previous job.",
+                        "She wanted to earn more money.",
+                        "She wanted to pursue her passion for graphic design.",
+                        "She wanted to work at a car dealership.",
+                    ],
+                    "answer": "She wanted to pursue her passion for graphic design.",
+                    "explanation": "Linda became a freelance graphic designer to pursue her passion for graphic design.",
+                },
+            ],
+        },
+        {
+            "id": "opinions",
+            "icon": "🗣️",
+            "title": "Listening for Opinions and Attitudes",
+            "description": "Memahami pendapat dan sikap pembicara tentang ujian.",
+            "topic": "Exams",
+            "instruction": "Listen to the audio and choose the correct answer!",
+            "speed": 1.0,
+            "audio": "/static/audio/audio-3.mp3",
+            "script": "",
+            "questions": [
+                {
+                    "type": "mcq",
+                    "prompt": "How does the first speaker feel about exams?",
+                    "options": [
+                        "He believes exams are the best way to measure someone's ability.",
+                        "He thinks exams are stressful and do not always reflect workplace skills.",
+                        "He enjoys taking exams because they help him get promotions.",
+                        "He believes academic qualifications are more important than experience.",
+                    ],
+                    "answer": "He thinks exams are stressful and do not always reflect workplace skills.",
+                    "explanation": "The first speaker thinks exams are stressful and do not always reflect workplace skills.",
+                },
+                {
+                    "type": "mcq",
+                    "prompt": "What is the second speaker's attitude towards exams?",
+                    "options": [
+                        "He believes exams are useless and should be removed.",
+                        "He thinks exams only test students' memory.",
+                        "He believes exams are valuable because they develop and test different skills.",
+                        "He prefers learning through personal projects rather than exams.",
+                    ],
+                    "answer": "He believes exams are valuable because they develop and test different skills.",
+                    "explanation": "The second speaker believes exams are valuable because they develop and test different skills.",
+                },
+            ],
+        },
+        {
+            "id": "sequence",
+            "icon": "⏱️",
+            "title": "Listening for Sequence",
+            "description": "Mengurutkan kejadian dari cerita yang didengar.",
+            "topic": "Sports history",
+            "instruction": "Listen to the audio and choose the correct answer!",
+            "speed": 1.0,
+            "audio": "/static/audio/audio-4.mp3",
+            "script": "",
+            "questions": [
+                {
+                    "type": "mcq",
+                    "prompt": "What happened after Fred Lorz's manager drove him for 11 miles?",
+                    "options": [
+                        "He stopped running and left the race.",
+                        "He continued running the final part to the finish line.",
+                        "He was immediately banned from the Olympics.",
+                        "He helped Thomas Hicks finish the race.",
+                    ],
+                    "answer": "He continued running the final part to the finish line.",
+                    "explanation": "After being driven for 11 miles by his manager, Fred Lorz continued running the final part to the finish line.",
+                },
+                {
+                    "type": "mcq",
+                    "prompt": "What happened after Lance Armstrong admitted to using performance-enhancing drugs?",
+                    "options": [
+                        "He received another Tour de France title.",
+                        "He returned to competitive cycling.",
+                        "He received a lifetime ban from competitive cycling.",
+                        "He became a professional coach.",
+                    ],
+                    "answer": "He received a lifetime ban from competitive cycling.",
+                    "explanation": "After admitting to using performance-enhancing drugs, Lance Armstrong received a lifetime ban from competitive cycling.",
+                },
+            ],
+        },
+        {
+            "id": "inference",
+            "icon": "💡",
+            "title": "Listening for Inference",
+            "description": "Menyimpulkan makna yang tidak disebutkan secara langsung.",
+            "topic": "Talking About Money",
+            "instruction": "Choose the correct answer based on the audio.",
+            "speed": 1.0,
+            "audio": "/static/audio/audio-5.mp3",
+            "script": "",
+            "questions": [
+                {
+                    "type": "mcq",
+                    "prompt": "What can we infer about Joseph?",
+                    "options": [
+                        "He prefers borrowing money from banks.",
+                        "He is careful about managing his money.",
+                        "He spends all his money immediately.",
+                        "He doesn't want to buy a new bike.",
+                    ],
+                    "answer": "He is careful about managing his money.",
+                    "explanation": "From the audio, we can infer that Joseph is careful about managing his money.",
+                },
+                {
+                    "type": "mcq",
+                    "prompt": "What can we infer about Sophie's experience?",
+                    "options": [
+                        "Lending money always improves relationships.",
+                        "Her cousin always pays her back on time.",
+                        "Lending money can create problems in relationships.",
+                        "She enjoys lending money to her family.",
+                    ],
+                    "answer": "Lending money can create problems in relationships.",
+                    "explanation": "Sophie's experience suggests that lending money can create problems in relationships.",
+                },
+            ],
+        },
+    ]
 }

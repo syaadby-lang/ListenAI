@@ -33,6 +33,3 @@ def make_feedback(level, score, correct, total, use_ai=True):
     else:
         msg = "Tidak apa-apa, latihan adalah proses. Putar audio dengan kecepatan lebih lambat, pecah menjadi beberapa bagian, lalu coba lagi."
     return {"text": msg + f" Nilai kamu {score}%.", "mode": "Local fallback"}
-
-"Do not claim to know which individual skill failed. "
-"Write plain text only, no Markdown, no asterisks, no bullet symbols."
